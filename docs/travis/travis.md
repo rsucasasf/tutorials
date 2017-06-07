@@ -3,9 +3,11 @@
 **Table of Contents**
 
 - Travis
+  - [Getting Started](https://docs.travis-ci.com/user/getting-started/)
   - Support settings for multiple languges in one travis ci file
   - Github - Integration with Travis
   - [Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
+  - [Building a Clojure project](https://docs.travis-ci.com/user/languages/clojure/)
 
 -----------------------
 
@@ -48,6 +50,8 @@ notifications:
   email:
     - yourname@gmail.com
 ```
+
+-----------------------
 
 #### Github - Integration with Travis
 
