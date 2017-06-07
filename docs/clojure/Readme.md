@@ -3,13 +3,13 @@
 **Table of Contents**
 
 - Clojure
-  - Requirements
+  - [Requirements](#requirements)
   - [Readable Clojure](http://tonsky.me/blog/readable-clojure/) : "*This is how you can make Clojure code more pleasant to work with*"
   - [Deploying to Maven Central](../maven/deploy.md), taken from https://github.com/technomancy/leiningen
-  - Leiningen
-    - Create a web project
+  - [Leiningen](#leiningen)
+    - [Create a web project](#create-a-web-project)
   - Export to maven (local repo)
-  - gen-class
+  - [gen-class](#gen-class)
 
 -----------------------
 
@@ -30,8 +30,6 @@
 ```bash
 lein new app APP_NAME
 ```
-
-
 
 - Compile (from project root path):
 
@@ -62,13 +60,13 @@ lein new compojure PROJECT_NAME
   :min-lein-version "1.8.0"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [compojure "1.5.1"]
-                 [cheshire "5.7.1"]                   ; MIT License ; https://github.com/dakrone/cheshire
-                 [clj-http "3.5.0"]                   ; MIT License ; https://github.com/dakrone/clj-http/
-                 [ring-cors/ring-cors "0.1.10"]       ; Eclipse Public License ; https://github.com/r0man/ring-cors
-                 [ring/ring-defaults "0.3.0"]         ; MIT License ; https://github.com/ring-clojure/ring-defaults
-                 [ring/ring-json "0.4.0"]             ; MIT License ; https://github.com/ring-clojure/ring-json
-                 [org.clojure/tools.logging "0.3.1"]  ; Eclipse Public License - Version 1.0 ; https://github.com/clojure/tools.logging
-                 [log4j/log4j "1.2.17"                ; Apache License, Version 2.0 ; http://logging.apache.org/log4j/1.2/
+                 [cheshire "5.7.1"]
+                 [clj-http "3.5.0"]
+                 [ring-cors/ring-cors "0.1.10"]
+                 [ring/ring-defaults "0.3.0"]
+                 [ring/ring-json "0.4.0"]
+                 [org.clojure/tools.logging "0.3.1"]
+                 [log4j/log4j "1.2.17"
                   :exclusions [javax.mail/mail
                               javax.jms/jms
                               com.sun.jdmk/jmxtools
@@ -127,26 +125,33 @@ mvn install:install-file -Dfile=cloj-rules-engine-0.1.1-standalone.jar -DgroupId
 
 #### gen-class
 
+- Generate classes from Clojude code
+  - project.clj
+  - return types
+  - objects
+
+Clojure - Java interop:
+
+##### Generate classes from Clojude code
+
 ###### project.clj
 
 ```clojure
 (defproject xxxx "0.1.12"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/tools.logging "0.3.1"]   ; ==> "0.3.1"  => Eclipse Public License - Version 1.0  https://github.com/clojure/tools.logging
-                 [log4j/log4j "1.2.17"                 ; ==> "1.2.17" => Apache License, Version 2.0           http://logging.apache.org/log4j/1.2/  **JAVA**
+                 [org.clojure/tools.logging "0.3.1"]
+                 [log4j/log4j "1.2.17"
                   :exclusions [javax.mail/mail
                                javax.jms/jms
                                com.sun.jdmk/jmxtools
                                com.sun.jmx/jmxri]]
                  [proto-repl "0.3.1"]
-                 [org.clojure/data.json "0.2.6"]       ; ==> "0.2.6"  => Eclipse Public License - Version 1.0  https://github.com/clojure/data.json
-                 [com.cerner/clara-rules "0.13.0"]]    ; ==> "0.13.0" => Apache License, Version 2.0           https://github.com/cerner/clara-rules
+                 [org.clojure/data.json "0.2.6"]]
   :main ^:skip-aot xxxx.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}
              :dev {:resource-paths ["resources"]}})
 ```
-
 
 ###### return types
 
@@ -166,4 +171,78 @@ mvn install:install-file -Dfile=cloj-rules-engine-0.1.1-standalone.jar -DgroupId
              [setLocation [String] void]
              [getLocation [] String]
              [getPathsGoal [String] "[Ljava.lang.String;"]]))
+```
+
+###### objects
+
+```clojure
+(ns cloj-rules-engine.rules-mng-java
+  "Rules-engine library used by Java"
+  (:use [clojure.math.numeric-tower])
+  (:require [cloj-rules-engine.rules-funcs :as rules-funcs]
+            [cloj-rules-engine.conds-eval :as conds-eval]
+            [cloj-rules-engine.logs :as logs]
+            [cloj-rules-engine.common :as common]
+            [clojure.data.json :as json])
+  (:gen-class
+    :name cloj_rules_engine.ClojRules
+    :state state
+    :init init
+    :prefix "-"
+    :implements [clojure.lang.IDeref]
+    :main false
+    :methods [[initialize [String] boolean]
+              [initializeFromJson [String] boolean]
+              [updateMapFacts [clojure.lang.PersistentArrayMap] void]
+              [getRulesActions [] java.util.ArrayList]
+              [getFiredRules [] java.util.ArrayList]]))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; CLASS OBJECTS FUNCTIONS (JAVA INTEROP)
+
+;; FUNCTION:set-field
+;; function to safely set the field content
+(defn set-field "function to safely set the field content"
+  [this key value]
+  (swap! (.state this) into {key value}))
+
+;; FUNCTION:get-field
+;; function to safely get the field content
+(defn get-field "function to safely get the field content"
+  [this key]
+  (@(.state this) key))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; FUNCTION:-init
+;; Set defaults
+(defn -init []
+  "store fields: values, conds & rules"
+  [[] (atom {:values {}
+             :rules {}
+             :conds {}})])
+
+;; FUNCTION: initialize
+;; 'rules-file': rules file (relative/absolute path of the rules-file)
+(defn -initialize "Intializes rules and conditions map"
+  [this rules-file]
+  (if-let [rules-map-content (common/read-content rules-file)]
+    (do
+      (common/set-field this :rules rules-map-content)
+      (common/set-field this :conds (conds-eval/gen-conds-map (common/get-field this :rules)))
+      true)
+    false))
+
+;; FUNCTION: initialize-from-json
+;; (json/read-str json-map-str :key-fn keyword)
+(defn -initializeFromJson "Intializes rules and conditions map from json string"
+  [this json-map-str]
+  (try
+    (do
+      (common/set-field this :rules (json/read-str json-map-str :key-fn keyword))
+      (common/set-field this :conds (conds-eval/gen-conds-map (common/get-field this :rules)))
+      true)
+    (catch Exception e
+      (do (logs/log-exception e) false))))
 ```
