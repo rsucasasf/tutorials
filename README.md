@@ -11,8 +11,6 @@ Mini tutorials and links
 - [Travis](docs/travis/travis.md)
   - Support settings for multiple languges in one travis ci file
   - Github - Integration with Travis
-
-
 - [Mini tutorials and links](#mini-tutorials-and-links)
   - Clojure
   - Travis
