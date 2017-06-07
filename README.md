@@ -6,18 +6,22 @@ Mini tutorials and links
 
 **Table of Contents**
 
-- [Maven](docs/maven/deploy.md)
+- [Maven](docs/maven/Readme.md)
   - [Deploying to Maven Central](docs/maven/deploy.md)
   - Export to maven (local repo)
-- [Travis](docs/travis/travis.md)
+- [Travis](docs/travis/Readme.md)
   - [Getting Started](https://docs.travis-ci.com/user/getting-started/)
   - Support settings for multiple languges in one travis ci file
   - Github - Integration with Travis
   - [Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
   - [Building a Clojure project](https://docs.travis-ci.com/user/languages/clojure/)
-- [Clojure](docs/clojure/clojure.md)
+- [Clojure](docs/clojure/Readme.md)
   - [Readable Clojure](http://tonsky.me/blog/readable-clojure/)
   - [Deploying to Maven Central](DEPLOY.md)
+- [Collectd](docs/collectd/Readme.md)
+  - Install
+  - Commands
+  - Custom plugins (written in C)
 - Others
   - Continuous Integration
   - Integration with CODECOV
