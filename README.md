@@ -31,19 +31,24 @@ Mini tutorials and links
   - Install
   - Commands
 - Others
-  - Continuous Integration
-  - Integration with CODECOV
+  - Continuous Integrations
   - Markdown tips and links
 
 -----------------------
 
 ### Continuous Integration
 
-[Travis](https://travis-ci.org/profile) ==> [codecov](https://codecov.io)
+- Tests / builds
+  - [Travis](https://travis-ci.org/profile)
 
-#### Integration with [CODECOV](https://codecov.io)
+  - [codeship](https://app.codeship.com)
 
-Codecov provides highly integrated tools to group, merge, archive and compare coverage reports. Whether your team is comparing changes in a pull request or reviewing a single commit, Codecov will improve the code review workflow and quality.
+    Codeship is a fully customizable Continuous Integration service in the cloud.
+
+- Code coverage
+  - [codecov](https://codecov.io)
+
+    Codecov provides highly integrated tools to group, merge, archive and compare coverage reports. Whether your team is comparing changes in a pull request or reviewing a single commit, Codecov will improve the code review workflow and quality.
 
 ### Markdown tips and links
 
