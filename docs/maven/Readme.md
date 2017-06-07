@@ -10,18 +10,10 @@
 
 #### Export to maven local repo
 
-- Create jar:
-
-```bash
-lein uberjar
-```
-
 - Create artifact in local repo:
 
 ```bash
 cd target
-
-cd uberjar
 
 mvn install:install-file -Dfile=cloj-rules-engine-0.1.1-standalone.jar -DgroupId=cloj-libs -DartifactId=cloj-rules-engine -Dversion=0.1.1 -Dpackaging=jar
 ```

@@ -16,8 +16,13 @@ Mini tutorials and links
   - [Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
   - [Building a Clojure project](https://docs.travis-ci.com/user/languages/clojure/)
 - [Clojure](docs/clojure/Readme.md)
+  - Requirements
   - [Readable Clojure](http://tonsky.me/blog/readable-clojure/)
   - [Deploying to Maven Central](DEPLOY.md)
+  - Leiningen
+    - Create a web project
+  - Export to maven (local repo)
+  - gen-class
 - [Collectd](docs/collectd/Readme.md)
   - Install
   - Commands
