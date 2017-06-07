@@ -33,6 +33,8 @@ Mini tutorials and links
 - Others
   - Continuous Integrations
   - Markdown tips and links
+  - jMonkeyEngine
+  - Github / Bitbucket
 
 -----------------------
 
@@ -55,3 +57,19 @@ Mini tutorials and links
 [Markdown License badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
 Other badges from [shields.io](https://shields.io/)
+
+### jMonkeyEngine
+
+[jMonkeyEngine Tutorials and Documentation](http://davidb.github.io/sandbox_wiki_jme/jme3.html)
+
+### Github / Bitbucket
+
+#### Include external project (from repo)
+
+1. git submodule add https://bitbucket.org/jaredw/awesomelibrary awesomelibrary
+
+2. commit & push
+
+#### Readme markup tips / examples
+
+Icons for markup: [http://www.webpagefx.com/tools/emoji-cheat-sheet/](http://www.webpagefx.com/tools/emoji-cheat-sheet/)
