@@ -23,6 +23,8 @@ Mini tutorials and links
   - Commands
   - Custom plugins (written in C)
 - [Docker](docs/docker/Readme.md)
+  - Install
+  - Commands
 - Others
   - Continuous Integration
   - Integration with CODECOV

@@ -51,16 +51,21 @@
 -----------------------
 
 #### COMMANDS
+
       	* sh to image
       		> sudo docker run --rm -it 291aa3a53362 sh
+
       	* Interactively Create a Docker Container
       		> sudo docker run -i -t rsucasas/compss-tango-cuda75 bash
       		> sudo docker run -i -t 8e33bc76bbfa bash
+
       	* Remove all stopped containers.
       		> sudo docker rm $(sudo docker ps -a -q)
+
       	* Remove all (untagged images)
       		> sudo docker rmi $(sudo docker images | grep "^<none>" | awk "{print $2}")
       		> sudo docker images -q | xargs sudo docker rmi
+
         * Remove "duplicated id" images
       		> sudo docker images | grep 078e9f235a3b | awk '{print $1 ":" $2}' | xargs sudo docker rmi
 
@@ -79,8 +84,10 @@
       			hello-world         latest              48b5124b2768        9 days ago          1.84 kB
       			docker/whalesay     latest              6b362a9f73eb        20 months ago       247 MB
       			---------------------------------------------------------------------------------------
+
       	* Show (running) containers:
       		> sudo docker ps
+
       	* Run docker ps -a to show all containers on the system:
       		> sudo docker ps -a
       			--------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,13 +96,16 @@
       			7eeefa6d3f17        docker-whale        "/bin/sh -c '/usr/..."   7 minutes ago       Exited (0) 7 minutes ago            musing_spence
       			706866f404fb        hello-world         "/hello"                 3 days ago          Exited (0) 3 days ago               amazing_mahavira
       			--------------------------------------------------------------------------------------------------------------------------------------------
+
       	* build the image using the docker build command. The -t parameter gives your image a tag, so you can run it more easily later.
       	  Don’t forget the . command, which tells the docker build command to look in the current directory for a file called Dockerfile.
       		> sudo docker build -t docker-whale .
       	  The "docker build -t docker-whale ." command reads the Dockerfile in the current directory and processes its instructions one by
       	  one to build an image called docker-whale on your local machine.
+
       	* Run image
       		> sudo docker run docker-whale
+
       	* View stats (for exampl, memory used by docker containers)
       		> sudo docker stats -a
       			-----------------------------------------------------------------------------------------------------------------------------
@@ -104,3 +114,4 @@
       			7eeefa6d3f17        --                  -- / --             --                  --                  --                  --
       			706866f404fb        --                  -- / --             --                  --                  --                  --
       			-----------------------------------------------------------------------------------------------------------------------------
+            
