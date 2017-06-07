@@ -88,23 +88,23 @@ sudo vi /opt/collectd/etc/collectd.conf
 
 - Install custom plugin written in C:
 
-  1. Compile program using src from 'collectd' (git - download): <nvidia_test_plugin>
+  1. Compile program using src from 'collectd' (git - download): <xxx_test_plugin>
 
 ```bash
-gcc -DHAVE_CONFIG_H -Wall -Werror -g -O2 -shared -fPIC -I/home/atos/collectd/src/ -I/home/atos/collectd/src/daemon/ -o nvidia_plugin.so nvidia_test_plugin.c
+gcc -DHAVE_CONFIG_H -Wall -Werror -g -O2 -shared -fPIC -I/home/collectd/src/ -I/home/collectd/src/daemon/ -o xxx_plugin.so xxx_test_plugin.c
 ```
 
   2. Modify permissions and owner
 
 ```bash
-sudo chmod 0755 nvidia_plugin.so
-sudo chown -R root:root nvidia_plugin.so
+sudo chmod 0755 xxx_plugin.so
+sudo chown -R root:root xxx_plugin.so
 ```
 
   3. Copy file in collectd plugins library: /opt/collectd/lib/collectd
 
 ```bash
-sudo cp nvidia_plugin.so /opt/collectd/lib/collectd/nvidia_plugin.so
+sudo cp xxx_plugin.so /opt/collectd/lib/collectd/xxx_plugin.so
 ```
 
   4. Edit 'collectd.conf' and enable CSV plugin
@@ -116,7 +116,7 @@ sudo vi /opt/collectd/etc/collectd.conf
   5. Start collectd and check errors
 
 ```bash
-sudo /home/atos/collectd/collectd
+sudo /home/collectd/collectd
 ```
 
   6. Stop all:
