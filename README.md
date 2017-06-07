@@ -6,6 +6,13 @@ Mini tutorials and links
 
 **Table of Contents**
 
+- [Maven](docs/maven/deploy.md)
+  - [Deploying to Maven Central](docs/maven/deploy.md)
+- [Travis](docs/travis/travis.md)
+  - Support settings for multiple languges in one travis ci file
+  - Github - Integration with Travis
+
+
 - [Mini tutorials and links](#mini-tutorials-and-links)
   - Clojure
   - Travis
