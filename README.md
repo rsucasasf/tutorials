@@ -70,6 +70,38 @@ Other badges from [shields.io](https://shields.io/)
 
 2. commit & push
 
+#### Configure bitbucket-pipelines.yml
+
+**pipelines** use docker images.
+
+https://stackoverflow.com/questions/40166537/is-it-possible-to-use-multiple-docker-images-in-bitbucket-pipeline
+
+[Configure bitbucket-pipelines.yml](https://confluence.atlassian.com/bitbucket/configure-bitbucket-pipelines-yml-792298910.html)
+
+```yaml
+# This is a sample build configuration.
+# Only use spaces to indent your bitbucket-pipelines.yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:4.6.0
+
+pipelines:
+  custom: # Pipelines that are triggered manually
+    sonar: # The name that is displayed in the list in the Bitbucket Cloud GUI
+      - step:
+          script:
+            - echo "Manual triggers for Sonar are awesome!"
+    deployment-to-prod: # Another display name
+      - step:
+          script:
+            - echo "Manual triggers for deployments are awesome!"
+  branches:  # Pipelines that run automatically on a commit to a branch
+    staging:
+      - step:
+          script:
+            - echo "Automated pipelines are cool too."
+```
+
 #### Readme markup tips / examples
 
 Icons for markup: [http://www.webpagefx.com/tools/emoji-cheat-sheet/](http://www.webpagefx.com/tools/emoji-cheat-sheet/)
