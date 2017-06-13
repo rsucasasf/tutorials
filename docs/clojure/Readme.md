@@ -10,6 +10,7 @@
     - [Create a web project](#create-a-web-project)
   - Export to maven (local repo)
   - [gen-class](#gen-class)
+  - Export to CLOJARS
 
 -----------------------
 
@@ -246,3 +247,20 @@ Clojure - Java interop:
     (catch Exception e
       (do (logs/log-exception e) false))))
 ```
+
+
+-----------------------
+
+#### Export to CLOJARS
+
+1. Create account in [CLOJARS](https://clojars.org/)
+
+2. Install [GPG](https://gpg4win.org/download.html)
+
+3. Execute:
+
+```bash
+lein deploy clojars
+```
+
+4. Use CLOJARS account username & password

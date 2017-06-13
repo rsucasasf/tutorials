@@ -10,6 +10,8 @@
 
 #### Export to maven local repo
 
+- Compile application (java, clojure ...)
+
 - Create artifact in local repo:
 
 ```bash
