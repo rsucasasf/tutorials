@@ -23,6 +23,8 @@ Mini tutorials and links
     - Create a web project
   - Export to maven (local repo)
   - gen-class
+  - Export to CLOJARS
+    - Update *.jar*
 - [Collectd](docs/collectd/Readme.md)
   - Install
   - Commands

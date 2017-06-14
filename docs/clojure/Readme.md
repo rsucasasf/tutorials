@@ -11,6 +11,7 @@
   - Export to maven (local repo)
   - [gen-class](#gen-class)
   - Export to CLOJARS
+    - Update *.jar*
 
 -----------------------
 
@@ -263,4 +264,46 @@ Clojure - Java interop:
 lein deploy clojars
 ```
 
+This command will take the values from *project.clj* file:
+
+```clojure
+(defproject clojars.org/cloj-rules-engine "0.1.2-SNAPSHOT"
+  ...
+```
+
+The generated 'links' will look like that:
+
+```
+[clojars.org/cloj-rules-engine "0.1.2-SNAPSHOT"]
+```
+
+```xml
+<dependency>
+  <groupId>clojars.org</groupId>
+  <artifactId>cloj-rules-engine</artifactId>
+  <version>0.1.2-SNAPSHOT</version>
+</dependency>
+```
+
 4. Use CLOJARS account username & password
+
+###### tips, problems found, ...
+
+Using `lein deploy clojars` creates a *.jar* file without dependencies.
+
+I couldn't find a way to deploy a "uberjar" generated *.jar*
+
+
+##### Update .jar
+
+To update or change the clojars .jar file, do the following:
+
+```bash
+lein deploy clojars clojars.org/cloj-rules-engine 0.1.2-SNAPSHOT target/cloj-rules-engine-0.1.2-SNAPSHOT.jar target/cloj-rules-engine-0.1.2-SNAPSHOT.pom
+```
+
+In order to create the *.pom* needed to upload the *.jar*, use the one generated:
+
+```bash
+mvn install:install-file -Dfile=cloj-rules-engine-0.1.2-SNAPSHOT-standalone.jar -DgroupId=clojars.org -DartifactId=cloj-rules-engine -Dversion=0.1.2-SNAPSHOT -Dpackaging=jar
+```
