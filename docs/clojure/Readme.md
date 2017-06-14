@@ -12,6 +12,7 @@ Clojure tutorials, links, help ....
   - [Deploying to Maven Central](../maven/deploy.md), taken from https://github.com/technomancy/leiningen
   - [Leiningen](#leiningen)
     - [Create a web project](#create-a-web-project)
+    - [Tutorial](leiningen_tutorial.md), taken from https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md
   - Export to maven (local repo)
   - [gen-class](#gen-class)
   - [Deploying to CLOJARS](#deploying-to-clojars)

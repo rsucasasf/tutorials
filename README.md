@@ -21,6 +21,7 @@ Mini tutorials and links collections. The content of each of the **table of cont
   - [Deploying to Maven Central](DEPLOY.md)
   - Leiningen
     - Create a web project
+    - Tutorial
   - Export to maven (local repo)
   - gen-class
   - Deploying to CLOJARS
