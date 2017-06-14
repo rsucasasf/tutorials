@@ -1,10 +1,10 @@
 # tutorials
 
-Mini tutorials and links
+Mini tutorials and links collections. The content of each of the **table of contents'** main sections can be found in their respective folders, except the *Others* content which is located in this document.
 
 -----------------------
 
-**Table of Contents**
+**Table of Contents / Folders**
 
 - [Maven](docs/maven/Readme.md)
   - [Deploying to Maven Central](docs/maven/deploy.md)
@@ -23,7 +23,7 @@ Mini tutorials and links
     - Create a web project
   - Export to maven (local repo)
   - gen-class
-  - Export to CLOJARS
+  - Deploying to CLOJARS
     - Update *.jar*
 - [Collectd](docs/collectd/Readme.md)
   - Install

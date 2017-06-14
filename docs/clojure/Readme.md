@@ -1,3 +1,7 @@
+## Clojure
+
+Clojure tutorials, links, help ....
+
 -----------------------
 
 **Table of Contents**
@@ -10,8 +14,9 @@
     - [Create a web project](#create-a-web-project)
   - Export to maven (local repo)
   - [gen-class](#gen-class)
-  - Export to CLOJARS
+  - [Deploying to CLOJARS](#deploying-to-clojars)
     - Update *.jar*
+  - [sample.project.clj](sample.project.clj), taken from https://github.com/technomancy/leiningen/blob/stable/sample.project.clj
 
 -----------------------
 
@@ -252,7 +257,7 @@ Clojure - Java interop:
 
 -----------------------
 
-#### Export to CLOJARS
+#### Deploying to CLOJARS
 
 1. Create account in [CLOJARS](https://clojars.org/)
 
