@@ -284,6 +284,15 @@ The generated 'links' will look like that:
 ```
 
 ```xml
+<repositories>
+	<repository>
+		<id>clojars</id>
+		<url>http://clojars.org/repo/</url>
+	</repository>
+</repositories>
+```
+
+```xml
 <dependency>
   <groupId>clojars.org</groupId>
   <artifactId>cloj-rules-engine</artifactId>
