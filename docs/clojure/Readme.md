@@ -17,6 +17,7 @@ Clojure tutorials, links, help ....
   - [gen-class](#gen-class)
   - [Deploying to CLOJARS](#deploying-to-clojars)
     - Update *.jar*
+  - Check code
   - [sample.project.clj](sample.project.clj), taken from https://github.com/technomancy/leiningen/blob/stable/sample.project.clj
 
 -----------------------
@@ -255,6 +256,41 @@ Clojure - Java interop:
       (do (logs/log-exception e) false))))
 ```
 
+-----------------------
+
+#### Check code
+
+- Configuration (project.clj):
+
+```clojure
+(defproject
+....
+  :plugins [[lein-cloverage "1.0.9"]
+            [jonase/eastwood "0.2.4"]
+            [lein-kibit "0.1.5"]]
+...
+```
+
+###### [lein-cloverage](https://github.com/cloverage/cloverage)
+
+- Example: https://github.com/codecov/example-clojure
+
+###### [jonase/eastwood](https://github.com/jonase/eastwood)
+
+- Usage:
+
+```bash
+lein eastwood
+```
+
+###### [lein-kibit](https://github.com/jonase/kibit)
+
+- Usage:
+
+```bash
+lein kibit
+lein kibit --replace --interactive
+```
 
 -----------------------
 

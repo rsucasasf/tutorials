@@ -10,6 +10,7 @@ Mini tutorials and links collections. The content of each of the **table of cont
   - [Deploying to Maven Central](docs/maven/deploy.md)
   - Export to maven (local repo)
   - Check code - PMD reports
+  - Code coverage - jacoco
 - [Travis](docs/travis/Readme.md)
   - [Getting Started](https://docs.travis-ci.com/user/getting-started/)
   - Support settings for multiple languges in one travis ci file
@@ -27,6 +28,7 @@ Mini tutorials and links collections. The content of each of the **table of cont
   - gen-class
   - Deploying to CLOJARS
     - Update *.jar*
+  - Check code
 - [Collectd](docs/collectd/Readme.md)
   - Install
   - Commands
