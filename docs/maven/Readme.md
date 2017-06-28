@@ -5,6 +5,7 @@
 - Maven
   - [Deploying to Maven Central](deploy.md)
   - Export to maven (local repo)
+  - Check code - PMD reports
 
 -----------------------
 
@@ -29,4 +30,43 @@ mvn install:install-file -Dfile=cloj-rules-engine-0.1.1-standalone.jar -DgroupId
   <artifactId>cloj-rules-engine</artifactId>
   <version>0.1.1</version>
 </dependency>
+```
+
+-----------------------
+
+#### Check code - PMD reports
+
+- Configuration (pom.xml):
+
+```xml
+<build>
+		<pluginManagement>
+			<plugins>
+        ...
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pmd-plugin</artifactId>
+					<version>3.8</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	...
+	<reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.5</version>
+      </plugin>
+    </plugins>
+	</reporting>
+  ...
+```
+
+- Usage:
+
+```bash
+mvn site
+mvn pmd:pmd
 ```

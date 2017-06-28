@@ -9,6 +9,7 @@ Mini tutorials and links collections. The content of each of the **table of cont
 - [Maven](docs/maven/Readme.md)
   - [Deploying to Maven Central](docs/maven/deploy.md)
   - Export to maven (local repo)
+  - Check code - PMD reports
 - [Travis](docs/travis/Readme.md)
   - [Getting Started](https://docs.travis-ci.com/user/getting-started/)
   - Support settings for multiple languges in one travis ci file
