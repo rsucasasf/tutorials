@@ -56,6 +56,8 @@ java -jar APP_NAME-standalone.jar [args]
 
 ##### Create a web project
 
+- RING project
+
 ```bash
 lein new compojure PROJECT_NAME
 ```
@@ -81,7 +83,9 @@ lein new compojure PROJECT_NAME
                               com.sun.jdmk/jmxtools
                               com.sun.jmx/jmxri]]
                  [proto-repl "0.3.1"]]
-  :plugins [[lein-ring "0.12.0"]]
+  :plugins [[lein-ring "0.12.0"]
+            [lein-uberwar "0.2.0"]]
+  :uberwar {:handler xxxxx.handler/app}
   :ring {:handler xxxxx.handler/app
          :port 8082
          :open-browser? true
@@ -97,6 +101,12 @@ lein new compojure PROJECT_NAME
 
 ```bash
 lein ring server
+```
+
+- Generate a .war file
+
+```bash
+lein uberwar
 ```
 
 -----------------------
