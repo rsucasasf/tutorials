@@ -67,6 +67,9 @@
 
 ;; ---- Subscription Handlers ----
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Subscribers: ---- Subscription Handlers ----
+
 (register-sub
  :board
  (fn
