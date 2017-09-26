@@ -1,10 +1,13 @@
-Example taken from [Re-Frame - Functional Reactive Programming With Clojurescript](https://dhruvp.github.io/2015/03/07/re-frame/)
-and [A Simple App](https://github.com/Day8/re-frame/tree/master/examples/simple)
+Examples taken from [Re-Frame - Functional Reactive Programming With Clojurescript](https://dhruvp.github.io/2015/03/07/re-frame/), [A Simple App](https://github.com/Day8/re-frame/tree/master/examples/simple) and [http://lambdax.io/blog/posts/2016-01-19-snake-game-part-1.html](http://lambdax.io/blog/posts/2016-01-19-snake-game-part-1.html)
 
-[re-frame](https://github.com/Day8/re-frame/blob/master/README.md)
+### Tutorials
+
+[https://github.com/dhruvp/angular-phonecat-re-frame](https://github.com/dhruvp/angular-phonecat-re-frame)
+[http://lambdax.io/blog/posts/2016-01-19-snake-game-part-1.html](http://lambdax.io/blog/posts/2016-01-19-snake-game-part-1.html)
+
+### [re-frame](https://github.com/Day8/re-frame/blob/master/README.md)
 
 ![re-frame](resources/dominoes.png)
-
 
 ### Create a new project
 
