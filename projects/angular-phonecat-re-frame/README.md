@@ -3,17 +3,34 @@ and [A Simple App](https://github.com/Day8/re-frame/tree/master/examples/simple)
 
 [re-frame](https://github.com/Day8/re-frame/blob/master/README.md)
 
-### Run It And Change It
+![re-frame](resources/dominoes.png)
 
-**Steps:**
+
+### Create a new project
+
+1. Download Leiningen
+
+2. Run:
+
+```bash
+lein new reagent PROJECT_NAME
+```
+
+### Run It And Change It
 
 1. Check out the re-frame repo
 
 2. Get a command line
 
-3. cd to the root of this sub project (where this README exists)
+3. cd to the root of this project (PROJECT_NAME - where this README exists)
 
-4. run "lein do clean, figwheel" to compile the app and start up figwheel hot-reloading,
+4. Run:
+
+```bash
+lein do clean, figwheel
+```
+
+to compile the app and start up figwheel hot-reloading
 
 5. open http://localhost:3449/example.html to see the app
 
